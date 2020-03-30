@@ -6,11 +6,7 @@
           <v-row class="text-center">
             <v-col cols="12">
               <h2 class="display-3">
-                "Hello TypeScript" - Where I gradually
-                <span class="bold" style="color:#294e80">
-                  <span class="font-weight-bold">Type</span>
-                  <span>Script!</span>
-                </span>
+                Pizza Maker
               </h2>
             </v-col>
           </v-row>
