@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer" app>
+    <v-navigation-drawer app>
       <v-list dense nav>
         <router-link to="/">
           <v-list-item link>
@@ -25,10 +25,8 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar app color="#294e80" dark>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title>
-        <span class="font-weight-bold">Type</span>
-        <span>Script</span>
+      <v-toolbar-title class="ml-2">
+        <span>{{ title }}</span>
       </v-toolbar-title>
     </v-app-bar>
     <router-view></router-view>
@@ -40,17 +38,22 @@
 
 <script lang="ts">
 import Vue from "vue";
-
+import { mapGetters } from "vuex";
 export default Vue.extend({
   name: "App",
-  data: () => ({
-    drawer: null
-  })
+  computed: {
+    ...mapGetters({
+      title: "getTitle"
+    })
+  }
 });
 </script>
 
 <style>
 a {
   text-decoration: none;
+}
+a.router-link-exact-active .v-list-item .v-list-item__action {
+  color: #03a9f4 !important;
 }
 </style>

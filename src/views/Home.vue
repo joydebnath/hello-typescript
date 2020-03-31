@@ -19,3 +19,17 @@
     </v-container>
   </v-content>
 </template>
+<script lang="ts">
+import Vue from "vue";
+export default Vue.extend({
+  name: "Home",
+  mounted() {
+    this.$store.commit("setTitle", "TypeScript");
+  }
+});
+</script>
+<style>
+.v-skeleton-loader__text {
+  height: 24px !important;
+}
+</style>

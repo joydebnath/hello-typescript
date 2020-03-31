@@ -2,16 +2,23 @@
   <v-content>
     <v-container fluid fill-height>
       <v-layout align-center justify-center>
-        <v-container>
-          <v-row class="text-center">
-            <v-col cols="12">
-              <h2 class="display-3">
-                Pizza Maker
-              </h2>
-            </v-col>
-          </v-row>
-        </v-container>
+        <order-menu />
       </v-layout>
     </v-container>
   </v-content>
 </template>
+
+<script lang="ts">
+import Vue from "vue";
+import OrderMenu from "../components/pizza-maker/OrderMenu.vue";
+
+export default Vue.extend({
+  name: "DecoratorPattern",
+  components: {
+    OrderMenu
+  },
+  mounted() {
+    this.$store.commit("setTitle", "Decorator Pattern - Pizza Maker!");
+  }
+});
+</script>

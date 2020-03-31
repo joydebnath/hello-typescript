@@ -7,7 +7,12 @@ export default new Vuex.Store({
   state: {
     title: "TypeScript"
   },
-  mutations: {},
+  getters: {
+    getTitle: state => state.title
+  },
+  mutations: {
+    setTitle: (state, value) => state.title = value,
+  },
   actions: {},
   modules: {}
 });
